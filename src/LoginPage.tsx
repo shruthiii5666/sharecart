@@ -11,6 +11,9 @@ export default function LoginPage() {
     e.preventDefault();
     console.log({ email, password });
     alert("Vendor logged in successfully!");
+    // Example inside handleLogin()
+    navigate("/dashboard");
+
     // Navigate to dashboard or homepage after login
   };
 
