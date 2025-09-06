@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 
-interface ButtonProps {
-  children: React.ReactNode;
-  onClick?: () => void;
-}
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
-export const Button: React.FC<ButtonProps> = ({ children, onClick }) => (
-  <button onClick={onClick} className="px-4 py-2 bg-blue-500 text-white rounded">
-    {children}
-  </button>
-);
+export const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
+  return (
+    <button {...props} className={`transition-colors duration-200 ${props.className}`}>
+      {children}
+    </button>
+  );
+};
